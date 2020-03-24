@@ -1,5 +1,5 @@
   import React,{useState} from 'react';
-  import { StyleSheet, Text, View, TextInput, Button } from 'react-native';
+  import { StyleSheet, Text, View, TextInput, Button, ScrollView } from 'react-native';
 
   export default function App() {
     const [anything, setAnything]=useState('');
@@ -16,7 +16,7 @@
     return (
       <View style={styles.container}>
 
-        <View>
+        <View style={styles.firstStyle}>
           <TextInput 
           placeholder='enter anything to be displayed'
           onChangeText={addValue}
@@ -24,9 +24,9 @@
           <Button title='add' onPress={saveData}/>
           </View>
 
-          <View>
-            {arrayData.map((values)=> <View style={styles.listStyle}><Text key={values}>{values}</Text></View>)}
-          </View>
+          <ScrollView>
+            {arrayData.map((values)=> <View key={values} style={styles.listStyle}><Text>{values}</Text></View>)}
+          </ScrollView>
 
 
 
@@ -35,6 +35,12 @@
   }
 
   const styles = StyleSheet.create({
+    firstStyle:{
+      padding:10,
+      flexDirection:'row',
+      alignItems:'center',
+      
+    },
     listStyle:{
       backgroundColor:'#ccc',
       borderColor:'black',
