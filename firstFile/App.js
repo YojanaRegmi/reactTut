@@ -24,16 +24,32 @@
           <Button title='add' onPress={saveData}/>
           </View>
 
-        <View>
+          <View>
+            {arrayData.map((values)=> <View style={styles.listStyle}><Text key={values}>{values}</Text></View>)}
+          </View>
+
+
+        {/* <View>
          <Text>display is printed here</Text>
-         <Text>{arrayData.map((data) => <Text key={data}>{data}</Text>)}</Text>
-        </View>
+         <Text>{arrayData.map((data) =>
+         <View style={styles.listStyle}>
+           <Text key={data}>{data}</Text>
+           </View>)}
+           </Text>
+        </View> */}
 
       </View>
     );
   }
 
   const styles = StyleSheet.create({
+    listStyle:{
+      backgroundColor:'#ccc',
+      borderColor:'black',
+      borderWidth:1,
+      padding:10,
+      margin:5,
+    },
     container: {
       flex: 1,
       backgroundColor: '#fff',
