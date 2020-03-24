@@ -25,9 +25,8 @@
           </View>
 
         <View>
-         <Text>Open up App.js to start working on your app!</Text>
          <Text>display is printed here</Text>
-         <Text>{arrayData.map((data) => <Text>{data}</Text>)}</Text>
+         <Text>{arrayData.map((data) => <Text key={data}>{data}</Text>)}</Text>
         </View>
 
       </View>
