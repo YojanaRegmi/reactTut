@@ -1,5 +1,5 @@
   import React,{useState} from 'react';
-  import { StyleSheet, Text, View, TextInput, Button, ScrollView } from 'react-native';
+  import { StyleSheet, Text, View, TextInput, Button, ScrollView, FlatList } from 'react-native';
 
   export default function App() {
     const [anything, setAnything]=useState('');
@@ -10,7 +10,7 @@
     }
 
     const saveData=()=>{
-      setArrayData(currentData=>[...currentData, anything]);
+      setArrayData(currentData=>[...currentData,{id:Math.random().toString(), text:anything}]);
     }
 
     return (
@@ -24,9 +24,11 @@
           <Button title='add' onPress={saveData}/>
           </View>
 
-          <ScrollView>
-            {arrayData.map((values)=> <View key={values} style={styles.listStyle}><Text>{values}</Text></View>)}
-          </ScrollView>
+          <FlatList keyExtractor={(item, index)=>item.id} data={arrayData} renderItem={itemData =>
+            <View style={styles.listStyle}>
+              <Text>{itemData.item.text}</Text>
+            </View>}>
+          </FlatList>
 
 
 
@@ -39,7 +41,8 @@
       padding:10,
       flexDirection:'row',
       alignItems:'center',
-      
+      justifyContent:'space-between',
+
     },
     listStyle:{
       backgroundColor:'#ccc',
