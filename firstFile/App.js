@@ -29,14 +29,6 @@
           </View>
 
 
-        {/* <View>
-         <Text>display is printed here</Text>
-         <Text>{arrayData.map((data) =>
-         <View style={styles.listStyle}>
-           <Text key={data}>{data}</Text>
-           </View>)}
-           </Text>
-        </View> */}
 
       </View>
     );
