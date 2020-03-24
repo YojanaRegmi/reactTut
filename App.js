@@ -16,7 +16,7 @@
     }
 
     return (
-      <ScrollView>
+    
       <View >
         <View style={styles.overall}>
         <TextInput 
@@ -30,17 +30,17 @@
         </View>
 //new test
         <View>
-          
+          <ScrollView > 
           {arrayOfGOals.map((valuess) =>(
             <View style={styles.outputStyle}>
-            <Text key={valuess}>{valuess}</Text></View>
-          ))}
+            <Text key={valuess}>{valuess}</Text> </View>
+          ))} </ScrollView>
         </View>
 
       
 
   </View>
-  </ScrollView>
+  
     );
   }
 
