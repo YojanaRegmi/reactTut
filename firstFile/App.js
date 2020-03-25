@@ -7,6 +7,11 @@
     
     const [arrayData, setArrayData]=useState([]);
 
+    const removeGoalHandler=goalId=>{
+      setArrayData(currentGoalsData=>{
+        return currentGoalsData.filter((goal)=> goal.id!==goalId);
+      });
+    }
     
     const saveData= anythingApp=>{
       setArrayData(currentData=>
@@ -21,7 +26,7 @@
 
         <FlatList keyExtractor={(item, index)=>item.id} 
         data={arrayData} renderItem={itemData =>
-         <GoalList title={itemData.item.text}/>
+         <GoalList onDelete={removeGoalHandler} id={itemData.item.id} title={itemData.item.text}/>
          }
         />
 

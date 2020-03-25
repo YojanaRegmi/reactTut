@@ -1,14 +1,16 @@
 import React from 'react';
-import {View, Text,StyleSheet} from 'react-native';
+import {View, Text,StyleSheet, TouchableOpacity} from 'react-native';
 
-const GoalList = prop=>{
+const GoalList = prop =>{
     return(
-    <View style={styles.listStyle}>
+        <TouchableOpacity onPress={prop.onDelete.bind(this,prop.id)}>
+        <View style={styles.listStyle}>
         <Text>{prop.title}</Text>
         {
             // u can use children and title too u can use but in title, u can use GoalList as a <>. 
         }
     </View>
+    </TouchableOpacity>
     );
 };
 const styles= StyleSheet.create({
