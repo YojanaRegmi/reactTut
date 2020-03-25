@@ -27,8 +27,14 @@ const GoalInput = prop =>{
         placeholder='enter anything to be displayed'
         onChangeText={addValue}
         />
+        <View style={styles.buttonStyle}>
+            <View style={styles.button}>
         <Button title='ADD' onPress={buttonPressed}/>
+        </View>
+        <View style={styles.buttonStyle}>
         <Button title='CANCEL' color='red' onPress={prop.onCancel}/>
+        </View>
+        </View>
         {/* accessing the onGoalAdded from prop that was sent into app.js */}
         {/* prop isnot inside bracket else that will be the passed value. */}
         {/* bind function is used to pass the input data into app.js since app.js doesnt have 'anything' */}
@@ -38,6 +44,16 @@ const GoalInput = prop =>{
 
 };
  const styles=StyleSheet.create({
+     button:{
+         width:'40%'
+     },
+     buttonStyle:{
+         width:'60%',
+         padding:10,
+         flexDirection:'row',
+         justifyContent:'space-around',
+         alignItems:'center',
+     },
     firstStyle:{
         flex:1,
         padding:10,
