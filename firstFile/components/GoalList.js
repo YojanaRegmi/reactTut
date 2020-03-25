@@ -1,8 +1,9 @@
 import React from 'react';
-import {View, Text,StyleSheet, TouchableOpacity} from 'react-native';
+import {View, Text,StyleSheet, TouchableOpacity, Modal} from 'react-native';
 
 const GoalList = prop =>{
     return(
+        
         <TouchableOpacity onPress={prop.onDelete.bind(this,prop.id)}>
         <View style={styles.listStyle}>
         <Text>{prop.title}</Text>
@@ -11,6 +12,7 @@ const GoalList = prop =>{
         }
     </View>
     </TouchableOpacity>
+    
     );
 };
 const styles= StyleSheet.create({
